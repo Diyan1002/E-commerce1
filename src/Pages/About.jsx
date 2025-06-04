@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "../assets/abouti.PNG";
+import AboutImage from "../assets/abouti.png";
 import Banner from "../Components/Banner";
 import { useCart } from "../contexts/CartContext";
 import StatsSection from "../Components/StatsSection";
