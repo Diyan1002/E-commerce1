@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import Banner from "../Components/Banner";
-import SearchIcon from "../assets/search.png";
-import HeartIcon from "../assets/heart.png";
-import BasketIcon from "../assets/basket.png";
 import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom"; // ADD THIS
+import Header from "../Components/Header";
 
 const CartPage = () => {
   const { cart, removeFromCart, updateCartItemQuantity } = useCart();
@@ -30,52 +28,7 @@ const CartPage = () => {
   return (
     <div>
       <Banner />
-      <header className="border-b border-gray-200 px-6 py-3">
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold ">Exclusive</h1>
-          <div className="absolute left-1/2 transform -translate-x-1/2">
-            <nav className="flex space-x-6 text-sm font-medium">
-              <Link to="/" className="text-black border-b-2 border-black">
-                Home
-              </Link>
-              <Link to="/contact" className="hover:text-black">
-                Contact
-              </Link>
-              <Link to="/about" className="hover:text-black">
-                About
-              </Link>
-              <Link to="/signup" className="hover:text-black">
-                Sign Up
-              </Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4 mr-24">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="What are you looking for?"
-                className="border border-gray-300 rounded-md pl-10 pr-3 py-1.5 w-64 text-sm focus:outline-none"
-              />
-              <img
-                src={SearchIcon}
-                alt="Search"
-                className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2"
-              />
-            </div>
-            <img src={HeartIcon} alt="Wishlist" className="w-4 h-4 cursor-pointer" />
-            <div className="relative">
-              <Link to="/cart">
-                <img src={BasketIcon} alt="Cart" className="w-5 h-5 cursor-pointer" />
-                {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                    {totalItems}
-                  </span>
-                )}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <div className="p-6">
         <h2 className="text-2xl font-bold mb-4">Cart</h2>
