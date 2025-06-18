@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import Banner from "../Components/Banner";
-
+import Header from "../Components/Header";
 const CheckoutPage = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,7 +27,7 @@ const CheckoutPage = () => {
   return (
     <div>
       <Banner />
-
+<Header />
       <div className="p-6 md:px-12 lg:px-24">
         {/* Breadcrumb */}
         <nav className="text-sm mb-6 text-gray-500">
